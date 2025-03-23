@@ -22,5 +22,7 @@ license-files = ["LICEN[CS]E*"]
 Homepage = "https://github.com/dawnsong/xProb"
 Issues = "https://github.com/dawnsong/xProb/issues"
 
+#fix error on pip:       AttributeError: module 'hatchling.build' has no attribute 'prepare_metadata_for_build_editable'
 [tool.hatch.metadata]
-allow-direct-references = true #fix error on pip:       AttributeError: module 'hatchling.build' has no attribute 'prepare_metadata_for_build_editable'
+allow-direct-references = true 
+
