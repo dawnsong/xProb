@@ -21,7 +21,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 license = "AFL-3.0"
-#license-files = ["LICEN[CS]E*","LICENSE.txt"] #this require 1.27 hatchling
+#license-files = ["LICEN[CS]E*","LICENSE.txt"] #this require 1.27 hatchling but databricks 15.4's mlflow is not compatible!
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools.dynamic]
