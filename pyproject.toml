@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling" , "packaging",]
+requires = ["hatchling==1.24.2"]
 build-backend = "hatchling.build"
 [tool.hatch.metadata]
 allow-direct-references = true 
