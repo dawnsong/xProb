@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "packaging"]
 build-backend = "hatchling.build"
 [tool.hatch.metadata]
 allow-direct-references = true 
@@ -16,6 +16,7 @@ requires-python = ">=3.8"
 #dependencies = []
 
 classifiers = [
+    "Development Status :: 0 - Alpha",
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
