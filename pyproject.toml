@@ -21,7 +21,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 license = "AFL-3.0"
-license-files = ["LICEN[CS]E*","LICENSE.txt"]
+#license-files = ["LICEN[CS]E*","LICENSE.txt"] #this require 1.27 hatchling
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools.dynamic]
