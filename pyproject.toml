@@ -1,5 +1,5 @@
 [build-system]
-requires = ["packaging", "hatchling" ]
+requires = ["hatchling" , "packaging",]
 build-backend = "hatchling.build"
 [tool.hatch.metadata]
 allow-direct-references = true 
@@ -21,7 +21,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 license = "AFL-3.0"
-license-files = ["LICENSE.txt"]
+license-files = ["LICEN[CS]E*","LICENSE.txt"]
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools.dynamic]
@@ -33,4 +33,5 @@ Homepage = "https://github.com/dawnsong/xProb"
 Issues = "https://github.com/dawnsong/xProb/issues"
 
 
-
+[project.scripts] #create cmd line prog
+xprob-cli = "xProb:test"
