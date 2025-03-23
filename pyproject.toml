@@ -16,7 +16,7 @@ requires-python = ">=3.8"
 #dependencies = []
 
 classifiers = [
-    "Development Status :: 0 - Alpha",
+    "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
