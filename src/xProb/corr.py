@@ -110,7 +110,7 @@ def bokeh4pcorr_v1(rmat, labels, ncolors=9, height=800, width=800, title="Pearso
     # bokeh.io.show(fig)
     return html 
   
-def bokeh4pcorr(rmat, labels,cmap='coolwarm',  width=800, height=800, title="Pearson Correlation", theme='light_minimal'):
+def bokeh4pcorr(rmat, labels,cmap='coolwarm', cmin=-1, cmax=1, ncolors=512, width=800, height=800, title="Pearson Correlation", theme='light_minimal'):
     import numpy as np
     import bisect
     import matplotlib as mpl
@@ -125,7 +125,7 @@ def bokeh4pcorr(rmat, labels,cmap='coolwarm',  width=800, height=800, title="Pea
     # display(cmap)
     # colors=list(reversed(Turbo256)) #list(reversed(RdBu11)) #
     # def get_colors(rmat, colors, amin=-1, amax=1):
-    def get_colors(rmat, cmap='coolwarm', amin=-1, amax=1, ncolors=256):
+    def get_colors(rmat, cmap='coolwarm', amin=-1, amax=1, ncolors=ncolors):
         """Aligns color values from palette with the correlation coefficient values"""
         # ccorr = np.arange(amin, amax, 1/ncolors)
         colorMat = ['']*np.prod(rmat.shape)
@@ -144,13 +144,13 @@ def bokeh4pcorr(rmat, labels,cmap='coolwarm',  width=800, height=800, title="Pea
         return colorMat , colors
     xname = []
     yname = []
-    colorMat, colors = get_colors(rmat,cmap='coolwarm', amin=-1, amax=1)
+    colorMat, colors = get_colors(rmat,cmap='coolwarm', amin=cmin, amax=cmax)
     alpha = [] # [1]*N*N
     for i, nodeR in enumerate(labels):
         for j, nodeC in enumerate(labels):
             xname.append(nodeR)
             yname.append(nodeC)
-            alpha.append(min(rmat[i,j], 0.9) + 0.1 ) 
+            alpha.append(1) #min(rmat[i,j], 0.9) + 0.1 ) 
             # color.append(cmap[int(np.clip(np.floor((rmat[i,j] + 1) / 2 * (len(cmap) - 1)), 0, len(cmap) - 1))])
     #set theme before calling fig            
     from bokeh.io import curdoc
