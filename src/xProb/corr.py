@@ -102,8 +102,14 @@ def bokeh4pcorr_v1(rmat, labels, ncolors=9, height=800, width=800, title="Pearso
     fig.add_layout(color_bar, 'right')
     # bokeh.io.output_file(f'test/bokeh.html')
     html=file_html(fig, CDN, title)
-    displayHTML(html)
+    try:
+      from dbruntime.display import displayHTML
+      displayHTML(html)
+    except Exception as e:
+      print(f'{e}')      
     # bokeh.io.show(fig)
+    return html 
+  
 def bokeh4pcorr(rmat, labels,cmap='coolwarm',  width=800, height=800, title="Pearson Correlation", theme='light_minimal'):
     import numpy as np
     import bisect
