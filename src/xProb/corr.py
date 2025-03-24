@@ -168,7 +168,12 @@ def bokeh4pcorr(rmat, labels,cmap='coolwarm',  width=800, height=800, title="Pea
     from bokeh.embed import components, file_html
     from bokeh.resources import CDN    
     html=file_html(fig, CDN, title)
-    displayHTML(html)
+    try:
+      from dbruntime.display import displayHTML
+      displayHTML(html)
+    except Exception as e:
+      print(f'{e}')
+    return html
 
 # rmat, rsim, labels=pcorr4sql(f""" select {",".join(lstFeatures40)} from  Summary""", imshow=True)
 # # bokeh4pcorr_v1(rmat,labels, width=800,height=800, title="Pearson Correlation Coefficient Heatmap")
