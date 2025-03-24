@@ -2,7 +2,9 @@ def pcorr4df(df=None, cosineThrd=0, imshow=False, dobokeh=False, bokehSquareSize
     import pyspark
     from pyspark.mllib.linalg.distributed import RowMatrix
     from pyspark.sql import functions as F
-    # from pyspark.mllib.linalg import Vectors    
+    # from pyspark.mllib.linalg import Vectors   
+    import numpy as np 
+    import matplotlib.pyplot as plt
     
     # display(df.describe()) #.show()
     dfs=df.describe().toPandas()
